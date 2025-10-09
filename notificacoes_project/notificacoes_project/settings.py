@@ -138,8 +138,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'maria.sousa05335@alunos.ufersa.edu.br'  # O e-mail que vai ENVIAR
-EMAIL_HOST_PASSWORD = 'cufx undr libg llrl' # A senha de 16 letras do Google
+EMAIL_HOST_USER = 'qualquer email válido'  # O e-mail que vai ENVIAR
+EMAIL_HOST_PASSWORD = 'sua senha de app gerada pela verificação de duas etapas' # A senha de 16 letras do Google
 DEFAULT_CHARSET = 'utf-8'
 # ... (resto do arquivo)
 
