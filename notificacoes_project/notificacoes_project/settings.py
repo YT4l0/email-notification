@@ -122,5 +122,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# settings.py
+
+# ... outras configurações
+
+# Configuração de E-mail para Produção
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'coloque seu email'  # O e-mail que vai ENVIAR
+EMAIL_HOST_PASSWORD = 'coloque sua senha de app, criada na verificação de duas etapas do email' # A senha de 16 letras do Google
