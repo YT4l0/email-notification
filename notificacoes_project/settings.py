@@ -127,20 +127,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ... outras configurações
 
-# Configuração de E-mail para Produção
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # settings.py
-
-# ... (outras configurações)
-
-# CONFIGURAÇÃO PARA ENVIAR E-MAILS DE VERDADE
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'qualquer email válido'  # O e-mail que vai ENVIAR
-EMAIL_HOST_PASSWORD = 'sua senha de app gerada pela verificação de duas etapas' # A senha de 16 letras do Google
+EMAIL_HOST_USER = 'o email que vai enviar a mensagem' 
+EMAIL_HOST_PASSWORD = 'sua senha de app feita depois da verificação de duas etapas na sua conta do google' # A senha de 16 letras do Google
 DEFAULT_CHARSET = 'utf-8'
-# ... (resto do arquivo)
-
-# ... resto das configurações
