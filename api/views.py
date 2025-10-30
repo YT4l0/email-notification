@@ -22,6 +22,13 @@ class NotificationView(APIView):
             email_to = data['email']
             subject = data['subject']
             message = data['message']
+
+            # Verificação: já existe notificação idêntica para esse usuário?
+            if Notification.objects.filter(email=email_to, subject=subject, message=message).exists():
+                return Response(
+                    {"message": "Essa notificação já foi enviada anteriormente."},
+                    status=status.HTTP_200_OK
+                )
             
             try:
                 # Tenta enviar o e-mail usando as configurações do settings.py
@@ -29,7 +36,7 @@ class NotificationView(APIView):
                     subject,
                     message,
                     settings.EMAIL_HOST_USER, # Remetente
-                    [email_to],             # Destinatário
+                    [email_to],               # Destinatário
                     fail_silently=False,
                 )
                 
@@ -48,5 +55,4 @@ class NotificationView(APIView):
                 
         # Se os dados forem inválidos, retorna os erros de validação
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    # teste pull request
+        nova-funcionalidade
