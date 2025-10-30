@@ -48,3 +48,5 @@ class NotificationView(APIView):
                 
         # Se os dados forem inválidos, retorna os erros de validação
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    # teste pull request
